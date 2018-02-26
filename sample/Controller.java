@@ -26,5 +26,12 @@ public class Controller {
     public Button three0;
 
     public void click(MouseEvent mouseEvent) {
+
+        System.out.println(mouseEvent.getButton().getClass());
+
     }
+
+
+
+
 }
