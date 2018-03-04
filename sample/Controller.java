@@ -1,12 +1,9 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.Label;
 
 public class Controller {
     public Button digit0;
@@ -31,7 +28,11 @@ public class Controller {
     @FXML
     public Button three0;
     @FXML
-    public GridPane filder;
+    public Label display;
+
+    private String textDisplay = "";
+
+    Calc calculator = new Calc();
 
 
 
@@ -39,15 +40,59 @@ public class Controller {
     public void clickDigit(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         String textButton = button.getText();
-        System.out.println(button.getText());
-        button.setFocusTraversable(false);
+        //String displayText = display.getText();
+        if(textDisplay.equals("")){
+            textDisplay = textButton;
+
+        }else {
+            textDisplay = textDisplay + textButton;
+        }
+        display.setText(textDisplay);
+        System.out.println(button.getText());//Test
     }
 
     @FXML
     public void clickAction(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         String str = ((Button) actionEvent.getSource()).getText();
-        button.setFocusTraversable(false);
-        System.out.println(button.getText());
+
+        calculator.setElement(display.getText());
+        textDisplay = "";
+        display.setText(String.valueOf(calculator.getResult()));
+
+        switch (str){
+            case "C":
+                clearDisplay();
+                break;
+            case "=":
+
+                break;
+            case "+":
+                calculator.setAction("+");
+                break;
+            case "-":
+                calculator.setAction("-");
+                break;
+            case "/":
+                calculator.setAction("/");
+                break;
+            case "*":
+                calculator.setAction("*");
+                break;
+            case "%":
+                calculator.setAction("%");
+                break;
+            case "SQR":
+                calculator.setAction("SQR");
+                break;
+        }
+
+
+        System.out.println(button.getText());//Test
+    }
+
+    private void clearDisplay() {
+        display.setText("0");
+        calculator.clear();
     }
 }
