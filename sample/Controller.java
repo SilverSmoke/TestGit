@@ -1,7 +1,12 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 
 public class Controller {
     public Button digit0;
@@ -23,15 +28,26 @@ public class Controller {
     public Button sqr;
     public Button percent;
     public Button clear;
+    @FXML
     public Button three0;
+    @FXML
+    public GridPane filder;
 
-    public void click(MouseEvent mouseEvent) {
 
-        System.out.println(mouseEvent.getButton().getClass());
 
+    @FXML
+    public void clickDigit(ActionEvent actionEvent) {
+        Button button = (Button) actionEvent.getSource();
+        String textButton = button.getText();
+        System.out.println(button.getText());
+        button.setFocusTraversable(false);
     }
 
-
-
-
+    @FXML
+    public void clickAction(ActionEvent actionEvent) {
+        Button button = (Button) actionEvent.getSource();
+        String str = ((Button) actionEvent.getSource()).getText();
+        button.setFocusTraversable(false);
+        System.out.println(button.getText());
+    }
 }

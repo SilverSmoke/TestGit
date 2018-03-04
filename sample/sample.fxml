@@ -20,7 +20,7 @@
          </children>
       </AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-        <GridPane alignment="center" hgap="1.0" vgap="1.0">
+        <GridPane fx:id="filder" alignment="center" hgap="1.0" vgap="1.0">
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="70.0" />
                 <RowConstraints minHeight="10.0" prefHeight="70.0" />
@@ -35,27 +35,27 @@
                 <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <children>
-                <Button fx:id="three0" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="000" GridPane.rowIndex="4">
+                <Button fx:id="three0" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="000" GridPane.rowIndex="4">
                 </Button>
-                <Button fx:id="digit0" onMouseClicked="#click" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <Button fx:id="equally" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                <Button fx:id="digit9" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                <Button fx:id="point" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="." GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                <Button fx:id="digit8" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <Button fx:id="digit7" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="7" GridPane.rowIndex="3" />
-                <Button fx:id="division" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                <Button fx:id="multiply" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                <Button fx:id="digit6" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                <Button fx:id="digit5" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Button fx:id="minus" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                <Button fx:id="digit3" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Button fx:id="digit2" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Button fx:id="digit1" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="1" GridPane.rowIndex="1" />
-                <Button fx:id="digit4" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="4" GridPane.rowIndex="2" />
-                <Button fx:id="plus" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" />
-                <Button fx:id="sqr" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="SQR" GridPane.columnIndex="2" />
-                <Button fx:id="percent" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="\%" GridPane.columnIndex="1" />
-                <Button fx:id="clear" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="C" />
+                <Button fx:id="digit0" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Button fx:id="equally" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Button fx:id="digit9" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Button fx:id="point" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Button fx:id="digit8" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Button fx:id="digit7" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="7" GridPane.rowIndex="3" />
+                <Button fx:id="division" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Button fx:id="multiply" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Button fx:id="digit6" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Button fx:id="digit5" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="minus" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button fx:id="digit3" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button fx:id="digit2" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="digit1" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="1" GridPane.rowIndex="1" />
+                <Button fx:id="digit4" focusTraversable="false" mnemonicParsing="false" onAction="#clickDigit" prefHeight="70.0" prefWidth="100.0" text="4" GridPane.rowIndex="2" />
+                <Button fx:id="plus" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="+" GridPane.columnIndex="3" />
+                <Button fx:id="sqr" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="SQR" GridPane.columnIndex="2" />
+                <Button fx:id="percent" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="\%" GridPane.columnIndex="1" />
+                <Button fx:id="clear" focusTraversable="false" mnemonicParsing="false" onAction="#clickAction" prefHeight="70.0" prefWidth="100.0" text="C" />
             </children>
         </GridPane>
     </AnchorPane>
