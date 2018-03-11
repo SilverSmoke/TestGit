@@ -2,15 +2,22 @@ package sample;
 
 public class Calc {
 
-    private double firstElement;
+    private double firstElement = 0;
 
     private double secondElement;
 
     private double result;
 
-    private String action = "+";
+    private String action = "";
 
     public void setAction(String string){
+        if(string.equals("C")){
+            clear();
+            return;
+        }else if(string.equals("=")){
+            calculation();
+            return;
+        }
         action = string;
     }
 
@@ -26,39 +33,43 @@ public class Calc {
 
     }
 
-    public Double getResult(){
-        if(action.isEmpty())return null;
+    public void calculation(){
+
+        //if(action.isEmpty())return null;
         switch (action){
             case "+":
-                firstElement += secondElement;
+                result = firstElement + secondElement;
                 break;
             case "-":
-                firstElement -= secondElement;
+                result = firstElement - secondElement;
                 break;
             case "/":
-                firstElement /= secondElement;
+                result = firstElement / secondElement;
                 break;
             case "*":
-                firstElement *= secondElement;
+                result = firstElement * secondElement;
                 break;
             default:
-                action = "+";
-                //result = firstElement;
+                //action = "";
+                //setFirstElement(string);
+                result = firstElement;
         }
-        //firstElement = result;
-        //secondElement = 0;
-        return  firstElement;
+        firstElement = result;
+    }
+
+    public Double getResult(){
+        return firstElement;
     }
 
     public void clear() {
         firstElement = 0;
         secondElement = 0;
         result = 0;
-        action = "+";
+        action = "";
     }
 
     public void setElement(String element) {
-        if(firstElement == 0){
+        if(action.equals("")){
             setFirstElement(element);
         }else{
             setSecondElement(element);

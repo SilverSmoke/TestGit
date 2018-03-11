@@ -30,24 +30,23 @@ public class Controller {
     @FXML
     public Label display;
 
-    private String textDisplay = "";
+    private Boolean updateDisplay = true;
 
     Calc calculator = new Calc();
-
-
 
     @FXML
     public void clickDigit(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         String textButton = button.getText();
-        //String displayText = display.getText();
-        if(textDisplay.equals("")){
-            textDisplay = textButton;
 
-        }else {
-            textDisplay = textDisplay + textButton;
+        if(updateDisplay){
+            display.setText(textButton);
+        }else{
+            display.setText(display.getText() + textButton);
         }
-        display.setText(textDisplay);
+
+        updateDisplay = false;
+
         System.out.println(button.getText());//Test
     }
 
@@ -56,43 +55,18 @@ public class Controller {
         Button button = (Button) actionEvent.getSource();
         String str = ((Button) actionEvent.getSource()).getText();
 
-        calculator.setElement(display.getText());
-        textDisplay = "";
-        display.setText(String.valueOf(calculator.getResult()));
+        if(!updateDisplay) {
 
-        switch (str){
-            case "C":
-                clearDisplay();
-                break;
-            case "=":
+            calculator.setElement(display.getText());
 
-                break;
-            case "+":
-                calculator.setAction("+");
-                break;
-            case "-":
-                calculator.setAction("-");
-                break;
-            case "/":
-                calculator.setAction("/");
-                break;
-            case "*":
-                calculator.setAction("*");
-                break;
-            case "%":
-                calculator.setAction("%");
-                break;
-            case "SQR":
-                calculator.setAction("SQR");
-                break;
         }
 
+        calculator.setAction(str);
+
+        display.setText(String.valueOf(calculator.getResult()));
+
+        updateDisplay = true;
 
         System.out.println(button.getText());//Test
-    }
-
-    private void clearDisplay() {
-        display.setText("0");
-        calculator.clear();
     }
 }
