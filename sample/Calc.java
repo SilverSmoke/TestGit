@@ -18,6 +18,7 @@ public class Calc {
             calculation();
             return;
         }
+        calculation();
         action = string;
     }
 
